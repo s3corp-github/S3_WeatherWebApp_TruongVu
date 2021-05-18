@@ -1,0 +1,26 @@
+.header {
+    max-width: 100%;
+    width: 100%;
+    // display: flex;
+    // justify-content: space-around;
+    // display: block;
+    .headerContainer {
+        display: grid;
+        max-width: 100vw;
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 1rem 1rem;
+        &__hamburgerMenu {
+            cursor: pointer;
+        }
+        &__selectLocation {
+            text-align: center;
+            
+        }
+        &__notification {
+            display: flex;
+            justify-content: flex-end;
+            cursor: pointer;
+        }
+    }
+}
