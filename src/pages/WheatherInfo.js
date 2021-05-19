@@ -7,6 +7,8 @@ const WhetherInfo = () => {
             <WheatherStatus/>
             <WheatherChart/>
         </>
+      
+    
     )
 }
 

@@ -24,5 +24,6 @@ a {
     max-width: 100vw;
     background: var(--bg-color);
     color: var(--font-color);
-    padding: 1rem 1rem;
+    overflow: hidden auto;
+    overflow-y: hidden;
 }

@@ -1,16 +1,31 @@
+import {IoIosAddCircleOutline} from 'react-icons/io'; 
+import {WiCloudy} from 'react-icons/wi';
+import {RiTempHotLine} from 'react-icons/ri';
+import {BsDroplet} from 'react-icons/bs';
+
 const WheatherStatus = () => {
   return (
     <>
       <div className="wheatherStatusContainer">
         <div className="wheatherStatusContainer__info">
-          <div className="wheatherStatusContainer__info-icon">Icon</div>
-          <div className="wheatherStatusContainer__info-detail">
-            <div className="status__text">
-              <h2>Cloudy</h2>
+          <div className="wheatherStatusContainer__info-wrapper">
+            <div className="wheatherStatusContainer__info-icon">
+              <WiCloudy size={120}/>
             </div>
-            <div className="status__detail">
-              <span className="status__detail-temp">33.2 C</span>
-              <span className="status__detail-humidity">77%</span>
+            <div className="wheatherStatusContainer__info-detail">
+              <div className="status__text">
+                Cloudy
+              </div>
+              <div className="status__detail">
+                <span className="status__detail-temp">
+                  <RiTempHotLine/>
+                  33.2 C
+                  </span>
+                <span className="status__detail-humidity">
+                  <BsDroplet/>
+                  77%
+                 </span>
+              </div>
             </div>
           </div>
         </div>
@@ -23,37 +38,33 @@ const WheatherStatus = () => {
               23
             </div>
             <div className="psi-status">
-             GOOD
+             Good
             </div>
           </div>
           <div className="wheatherStatusContainerDetail__detail">
-            <div className="psi-text">
-              <h3>PSI</h3>
+            <div className="rain-text">
+              <h3>RAIN</h3>
             </div>
-            <div className="psi-number">
-              23
+            <div className="rain-number">
+              0
             </div>
-            <div className="psi-status">
-             GOOD
-            </div>
-          </div>
-          <div className="wheatherStatusContainerDetail__detail">
-          <div className="psi-text">
-              <h3>PSI</h3>
-            </div>
-            <div className="psi-number">
-              23
-            </div>
-            <div className="psi-status">
-             GOOD
+            <div className="rain-status">
+              mm
             </div>
           </div>
           <div className="wheatherStatusContainerDetail__detail">
-            <div className="psi-number">
-              23
+            <div className="dengue-text">
+              <h3>DENGUE</h3>
             </div>
-            <div className="psi-status">
-             GOOD
+            <div className="dengueIcon-outline">
+            </div>
+          </div>
+          <div className="wheatherStatusContainerDetail__detail">
+            <div className="add-icon">
+              <IoIosAddCircleOutline size={47}/>
+            </div>
+            <div className="add-text">
+              Add
             </div>
           </div>
         </div>
