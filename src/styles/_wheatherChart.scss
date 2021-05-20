@@ -5,6 +5,23 @@
     height: 34%;
     background-color: var(--font-color);
     width: 100%;
-    color: red;
+    .chartContainer {
+        &__text {
+            font-size: var(--font-size-text);
+            font-weight: var(--font-weight-title);
+            color:  var(--color-orange);
+            padding: var(--layout-padding);
+            position: fixed;
+            width: 100%;
+            .tide-text {
+                color: #1ab7ea
+            }
+            .date {
+                color: var(--color-black);
+                text-align: center;
+                margin-top: 5px;
+            }
+        }
+    }
 }
 
