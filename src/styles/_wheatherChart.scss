@@ -14,7 +14,10 @@
             position: fixed;
             width: 100%;
             .tide-text {
-                color: #1ab7ea
+                color: var(--color-blue-tide);
+            }
+            .dot {
+                color: var(--color-black)
             }
             .date {
                 color: var(--color-black);

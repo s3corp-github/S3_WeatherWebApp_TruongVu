@@ -1,87 +1,56 @@
-import {useState} from 'react';
 import {
   XAxis,
   YAxis,
   Tooltip,
   AreaChart,
   Area,
-  Legend,
   ResponsiveContainer
 } from "recharts";
-
-const chartData = [
-  { hour: '12 a.m', tide: 2.9, sun: 0 },
-  { hour: '2 a.m', tide: 2.8, sun: 0 },
-  { hour: '4 a.m', tide: 2.5, sun: 0 },
-  { hour: '6 a.m', tide: 2, sun: 0.001 },
-  { hour: '8 a.m', tide: 1.5, sun: 1.6 },
-  { hour: '10 a.m', tide: 1, sun: 3.4 },
-  { hour: '12 p.m', tide: 0.7, sun: 4.1 },
-  { hour: '2 p.m', tide: 1, sun: 3.4 },
-  { hour: '4 p.m', tide: 1.5, sun: 1.6 },
-  { hour: '6 p.m', tide: 2, sun: 0.001 },
-  { hour: '8 p.m', tide: 2.5, sun: 0 },
-  { hour: '10 p.m', tide: 2.8, sun: 0 },
-  { hour: '12 a.m', tide: 2.9, sun: 0 },
-  { hour: '2 a.m', tide: 2.8, sun: 0 },
-  { hour: '4 a.m', tide: 2.5, sun: 0 },
-  { hour: '6 a.m', tide: 2, sun: 0.001 },
-  { hour: '8 a.m', tide: 1.5, sun: 1.6 },
-  { hour: '10 a.m', tide: 1, sun: 3.4 },
-  { hour: '12 p.m', tide: 0.7, sun: 4.1 },
-  { hour: '2 p.m', tide: 1, sun: 3.4 },
-  { hour: '4 p.m', tide: 1.5, sun: 1.6 },
-  { hour: '6 p.m', tide: 2, sun: 0.001 },
-  { hour: '8 p.m', tide: 2.5, sun: 0 },
-  { hour: '10 p.m', tide: 2.8, sun: 0 },
-  { hour: '12 a.m', tide: 2.9, sun: 0 },
-  { hour: '2 a.m', tide: 2.8, sun: 0 },
-  { hour: '4 a.m', tide: 2.5, sun: 0 },
-  { hour: '6 a.m', tide: 2, sun: 0.001 },
-  { hour: '8 a.m', tide: 1.5, sun: 1.6 },
-  { hour: '10 a.m', tide: 1, sun: 3.4 },
-  { hour: '12 p.m', tide: 0.7, sun: 4.1 },
-  { hour: '2 p.m', tide: 1, sun: 3.4 },
-  { hour: '4 p.m', tide: 1.5, sun: 1.6 },
-  { hour: '6 p.m', tide: 2, sun: 0.001 },
-  { hour: '8 p.m', tide: 2.5, sun: 0 },
-  { hour: '10 p.m', tide: 2.8, sun: 0 },
-  { hour: '12 a.m', tide: 2.9, sun: 0 }
-]
+// utils
+import {CustomizeSunDot, CustomizedTooltip} from '../utils/customizeChart';
+import { chartData } from '../utils/fakeData';
+//hooks
+import useWindowSize from '../hooks/useWindowSize';
 
 const WheatherChart = () => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const size = useWindowSize();
+  
   return (
     <div className="wheatherChartContainer">
       <div className="chartContainer">
         <div className="chartContainer__text">
           <span className="tide-text">
-            {`Tide ${" "}`}
+            Tide
           </span>
-          Sunrise and Sunset
+          <span className="dot">•</span>
+          <span>Sunrise and Sunset</span>
           <div className="date">
             28th May, 2021
           </div>
         </div>
-        
-        {/* <ResponsiveContainer key={windowWidth} width={2500} height="100%"> */}
+      </div>
+      <ResponsiveContainer key={size.width} width={2000} height="100%" >
           <AreaChart
             data={chartData}
-            width={2500} height={250}
+            // width={2500} height={250}
             margin={{
-              top: 0, left: 0, bottom: 30
+              top: 0, left: 0, bottom: 0
             }}
           >
           <XAxis dataKey="hour" />
-          {/* <YAxis /> */}
-            <Tooltip />
-            <Legend />
+            <Tooltip content={<CustomizedTooltip/>}/>
+            {/* <Legend /> */}
             <Area type="monotone" dataKey="tide" fill="#1ab7ea" />
-            <Area type="monotone" dataKey="sun" stroke="#ffc658" fill="#FFF" />
+            <Area
+              type="monotone"
+              dataKey="sun" 
+              stroke="#ffc658" 
+              fillOpacity={0}
+              dot={<CustomizeSunDot/>}
+              // activeDot={<CustomizeSunDot />}
+            />
           </AreaChart>
-        {/* </ResponsiveContainer> */}
-        
-      </div>
+        </ResponsiveContainer>
     </div>
   )
 }
