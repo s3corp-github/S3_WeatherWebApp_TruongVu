@@ -1,16 +1,15 @@
 import {
   XAxis,
-  YAxis,
   Tooltip,
   AreaChart,
   Area,
   ResponsiveContainer
 } from "recharts";
 // utils
-import {CustomizeSunDot, CustomizedTooltip} from '../utils/customizeChart';
-import { chartData } from '../utils/fakeData';
+import {CustomizeSunDot, CustomizedTooltip} from '../../utils/customizeChart';
+import { chartData } from '../../utils/fakeData';
 //hooks
-import useWindowSize from '../hooks/useWindowSize';
+import useWindowSize from '../../hooks/useWindowSize';
 
 const WheatherChart = () => {
   const size = useWindowSize();
@@ -32,14 +31,12 @@ const WheatherChart = () => {
       <ResponsiveContainer key={size.width} width={2000} height="100%" >
           <AreaChart
             data={chartData}
-            // width={2500} height={250}
             margin={{
               top: 0, left: 0, bottom: 0
             }}
           >
           <XAxis dataKey="hour" />
             <Tooltip content={<CustomizedTooltip/>}/>
-            {/* <Legend /> */}
             <Area type="monotone" dataKey="tide" fill="#1ab7ea" />
             <Area
               type="monotone"
