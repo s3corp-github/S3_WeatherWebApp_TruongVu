@@ -1,11 +1,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import WheatherStatus from '../WheatherStatus';
+import WeatherStatus from '../WeatherStatus';
 
-describe('WheatherStatus', () => {
-  test('Render WheatherStatus component', () => {
-      render(<WheatherStatus/>);
+describe('WeatherStatus', () => {
+  test('Render WeatherStatus component', () => {
+      render(<WeatherStatus/>);
     // screen.debug();
       expect(screen.getByText(/Cloudy/)).toBeInTheDocument();
       expect(screen.getByText(/PSI/)).toBeInTheDocument();

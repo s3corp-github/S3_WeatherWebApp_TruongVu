@@ -6,16 +6,16 @@ import {
   ResponsiveContainer
 } from "recharts";
 // utils
-import {CustomizeSunDot, CustomizedTooltip} from '../../utils/customizeChart';
+import {CustomizeActiveDot, CustomizedTooltip} from '../../utils/ChartCustomized/CustomizeChart';
 import { chartData } from '../../utils/fakeData';
 //hooks
 import useWindowSize from '../../hooks/useWindowSize';
 
-const WheatherChart = () => {
+const WeatherChart = () => {
   const size = useWindowSize();
   
   return (
-    <div className="wheatherChartContainer">
+    <div className="weatherChartContainer">
       <div className="chartContainer">
         <div className="chartContainer__text">
           <span className="tide-text">
@@ -28,7 +28,9 @@ const WheatherChart = () => {
           </div>
         </div>
       </div>
-      <ResponsiveContainer key={size.width} width={2000} height="100%" >
+      {
+        chartData ? (
+          <ResponsiveContainer key={size.width} width={2000} height="100%" >
           <AreaChart
             data={chartData}
             margin={{
@@ -37,18 +39,20 @@ const WheatherChart = () => {
           >
           <XAxis dataKey="hour" />
             <Tooltip content={<CustomizedTooltip/>}/>
-            <Area type="monotone" dataKey="tide" fill="#1ab7ea" />
+            <Area type="monotone" dataKey="tide" fill="var(--color-blue-tide)" dot={false}/>
             <Area
               type="monotone"
               dataKey="sun" 
-              stroke="#ffc658" 
+              stroke='var(--color-orange)' 
               fillOpacity={0}
-              dot={<CustomizeSunDot/>}
-              // activeDot={<CustomizeSunDot />}
+              activeDot={<CustomizeActiveDot/>}
             />
           </AreaChart>
         </ResponsiveContainer>
+        ) : 'No data chart'
+      }
+      
     </div>
   )
 }
-export default WheatherChart;
+export default WeatherChart;

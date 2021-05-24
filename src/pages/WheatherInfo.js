@@ -1,11 +1,11 @@
-import WheatherStatus from "../components/WheatherStatus";
-import WheatherChart from "../components/WheatherChart";
+import WeatherStatus from "../components/WeatherStatus";
+import WeatherChart from "../components/WeatherChart";
 
 const WhetherInfo = () => {
     return (
         <>
-            <WheatherStatus/>
-            <WheatherChart/>
+            <WeatherStatus/>
+            <WeatherChart/>
         </>
       
     

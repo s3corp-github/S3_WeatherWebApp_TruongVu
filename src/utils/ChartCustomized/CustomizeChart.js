@@ -1,11 +1,18 @@
-// import Sun from '../assets/sun1.png'
+import Moon from '../../assets/moon';
+import Sun from '../../assets/sun'
 
-export const CustomizeSunDot = (props) => {
-    console.log(props)
-    const {cx, cy} = props;
+export const CustomizeActiveDot = (props) => {
+    const {cx, cy, value} = props;
+    if(!value) return;
+    if(value[1] > 0) {
+        return (
+            <Sun cx={cx} cy={cy}/>
+        )
+    }
     return (
-        <img cx={cx} cy={cy} width={30} height={30} alt="sun" src='../assets/sun1.png'/>
+        <Moon cx={cx} cy={cy + 15}/>
     )
+    
 }
 
 export const CustomizedTooltip = ({ active, payload }) => {

@@ -3,7 +3,7 @@ import {WiCloudy} from 'react-icons/wi';
 import {RiTempHotLine} from 'react-icons/ri';
 import {BsDroplet} from 'react-icons/bs';
 
-const WheatherStatus = () => {
+const WeatherStatus = () => {
   return (
     <>
       <div className="wheatherStatusContainer">
@@ -74,4 +74,4 @@ const WheatherStatus = () => {
   );
 };
 
-export default WheatherStatus;
+export default WeatherStatus;
