@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import Navigation from '.';
+import Navigation from '../Navigation';
 
 describe('Navigation', () => {
   test('Render Navigation component', () => {
@@ -9,7 +9,5 @@ describe('Navigation', () => {
     // screen.debug();
       expect(screen.getByText(/Current Location/)).toBeInTheDocument();
       expect(screen.getByText(/myENV/)).toBeInTheDocument();
-    // findBy...
-    // queryBy...
   })
 })
