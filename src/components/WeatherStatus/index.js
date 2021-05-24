@@ -6,13 +6,13 @@ import {BsDroplet} from 'react-icons/bs';
 const WeatherStatus = () => {
   return (
     <>
-      <div className="wheatherStatusContainer">
-        <div className="wheatherStatusContainer__info">
-          <div className="wheatherStatusContainer__info-wrapper">
-            <div className="wheatherStatusContainer__info-icon">
+      <div className="weatherStatusContainer">
+        <div className="weatherStatusContainer__info">
+          <div className="weatherStatusContainer__info-wrapper">
+            <div className="weatherStatusContainer__info-icon">
               <WiCloudy size={120}/>
             </div>
-            <div className="wheatherStatusContainer__info-detail">
+            <div className="weatherStatusContainer__info-detail">
               <div className="status__text">
                 Cloudy
               </div>
@@ -29,8 +29,8 @@ const WeatherStatus = () => {
             </div>
           </div>
         </div>
-        <div className='wheatherStatusContainerDetail'>
-          <div className="wheatherStatusContainerDetail__detail">
+        <div className='weatherStatusContainerDetail'>
+          <div className="weatherStatusContainerDetail__detail">
             <div className="psi-text">
               <h3>PSI</h3>
             </div>
@@ -41,7 +41,7 @@ const WeatherStatus = () => {
              Good
             </div>
           </div>
-          <div className="wheatherStatusContainerDetail__detail">
+          <div className="weatherStatusContainerDetail__detail">
             <div className="rain-text">
               <h3>RAIN</h3>
             </div>
@@ -52,14 +52,14 @@ const WeatherStatus = () => {
               mm
             </div>
           </div>
-          <div className="wheatherStatusContainerDetail__detail">
+          <div className="weatherStatusContainerDetail__detail">
             <div className="dengue-text">
               <h3>DENGUE</h3>
             </div>
             <div className="dengueIcon-outline">
             </div>
           </div>
-          <div className="wheatherStatusContainerDetail__detail">
+          <div className="weatherStatusContainerDetail__detail">
             <div className="add-icon">
               <IoIosAddCircleOutline size={47}/>
             </div>

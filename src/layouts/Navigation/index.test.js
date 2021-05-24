@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import Navigation from '../Navigation';
+import Navigation from '.';
 
 describe('Navigation', () => {
   test('Render Navigation component', () => {

@@ -1,7 +1,7 @@
 @import './styles/default';
-@import './styles/navigation';
-@import './styles/wheatherInfo';
 @import './styles/variables';
-@import './styles/wheatherChart';
-@import './styles/wheatherStatus';
-@import './styles//chart';
+
+@import './utils/ChartCustomized/CustomizeChart';
+@import './components/Navigation/navigation';
+@import './components/WeatherChart/weatherChart';
+@import './components/WeatherStatus/weatherStatus';

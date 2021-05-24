@@ -1,5 +1,5 @@
-import Moon from '../../assets/moon';
-import Sun from '../../assets/sun'
+import Moon from '../../assets/images/moon';
+import Sun from '../../assets/images/sun'
 
 export const CustomizeActiveDot = (props) => {
     const {cx, cy, value} = props;
@@ -10,7 +10,7 @@ export const CustomizeActiveDot = (props) => {
         )
     }
     return (
-        <Moon cx={cx} cy={cy + 15}/>
+        <Moon cx={cx} cy={cy + 10}/>
     )
     
 }

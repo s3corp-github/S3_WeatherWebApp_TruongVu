@@ -39,7 +39,12 @@ const WeatherChart = () => {
           >
           <XAxis dataKey="hour" />
             <Tooltip content={<CustomizedTooltip/>}/>
-            <Area type="monotone" dataKey="tide" fill="var(--color-blue-tide)" dot={false}/>
+            <Area 
+              type="monotone" 
+              dataKey="tide" 
+              fill="var(--color-blue-tide)" 
+              activeDot={false} 
+            />
             <Area
               type="monotone"
               dataKey="sun" 
