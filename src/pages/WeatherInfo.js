@@ -1,15 +1,15 @@
 import WeatherStatus from "../components/WeatherStatus";
 import WeatherChart from "../components/WeatherChart";
 
-const WhetherInfo = () => {
+const WeatherInfo = () => {
     return (
         <>
-            <WeatherStatus/>
-            <WeatherChart/>
+            <WeatherStatus />
+            <WeatherChart />
         </>
-      
-    
+
+
     )
 }
 
-export default WhetherInfo;
+export default WeatherInfo;
