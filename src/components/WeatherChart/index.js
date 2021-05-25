@@ -11,13 +11,13 @@ import useWindowSize from "../../hooks/useWindowSize";
 const WeatherChart = () => {
   const size = useWindowSize();
 
-  const renderBackDrop = () => {
-    return (
-      <div className="backdropContainer" style={{ color: "black" }}>
-        hello
-      </div>
-    );
-  };
+  // const renderBackDrop = () => {
+  //   return (
+  //     <div className="backdropContainer" style={{ color: "black" }}>
+  //       hello
+  //     </div>
+  //   );
+  // };
   return (
     <div className="weatherChartContainer">
       <div className="chartContainer">
@@ -38,7 +38,7 @@ const WeatherChart = () => {
               bottom: 0,
             }}
           >
-            {renderBackDrop({})}
+            {/* {renderBackDrop({})} */}
             <XAxis dataKey="hour" />
             <Tooltip content={<CustomizedTooltip />} />
             <Area
