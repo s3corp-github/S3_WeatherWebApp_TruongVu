@@ -5,9 +5,8 @@ import Navigation from '../Navigation';
 
 describe('Navigation', () => {
   test('Render Navigation component', () => {
-      render(<Navigation/>);
-    // screen.debug();
-      expect(screen.getByText(/Current Location/)).toBeInTheDocument();
-      expect(screen.getByText(/myENV/)).toBeInTheDocument();
+    render(<Navigation />);
+    expect(screen.getByText(/Current Location/)).toBeInTheDocument();
+    expect(screen.getByText(/myENV/)).toBeInTheDocument();
   })
 })

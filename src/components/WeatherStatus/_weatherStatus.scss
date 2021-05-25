@@ -1,5 +1,5 @@
 .weatherStatusContainer {
-    height: 60%;
+    height: 59.4%;
     position: relative;
     padding: 0.75rem 0.75rem;
     &__info {
@@ -19,7 +19,7 @@
             flex: 1 1;
             flex-direction: column;
             justify-content: space-between;
-            .status__detail  {
+            .status__detail {
                 display: flex;
                 justify-content: space-between;
                 font-size: 1.25rem;
@@ -30,8 +30,8 @@
                 }
                 &-humidity {
                     display: flex;
-                    align-items: center; 
-                } 
+                    align-items: center;
+                }
             }
             .status__text {
                 font-size: 2rem;
