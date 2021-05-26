@@ -1,4 +1,4 @@
-import { XAxis, Tooltip, AreaChart, Area, ResponsiveContainer } from "recharts";
+import { XAxis, Tooltip, AreaChart, Area, ResponsiveContainer, ReferenceArea } from "recharts";
 // utils
 import {
   CustomizeActiveDot,
@@ -10,14 +10,7 @@ import useWindowSize from "../../hooks/useWindowSize";
 
 const WeatherChart = () => {
   const size = useWindowSize();
-
-  // const renderBackDrop = () => {
-  //   return (
-  //     <div className="backdropContainer" style={{ color: "black" }}>
-  //       hello
-  //     </div>
-  //   );
-  // };
+  
   return (
     <div className="weatherChartContainer">
       <div className="chartContainer">
@@ -29,7 +22,7 @@ const WeatherChart = () => {
         </div>
       </div>
       {chartData ? (
-        <ResponsiveContainer key={size.width} width={2000} height="100%">
+        <ResponsiveContainer width={size.width} height="100%">
           <AreaChart
             data={chartData}
             margin={{
@@ -38,8 +31,6 @@ const WeatherChart = () => {
               bottom: 0,
             }}
           >
-            {/* {renderBackDrop({})} */}
-            <XAxis dataKey="hour" />
             <Tooltip content={<CustomizedTooltip />} />
             <Area
               type="monotone"
@@ -53,6 +44,19 @@ const WeatherChart = () => {
               stroke="var(--color-orange)"
               fillOpacity={0}
               activeDot={<CustomizeActiveDot />}
+            />
+            <XAxis dataKey="hour"/>
+            <ReferenceArea
+              x1={'12 a.m'}
+              x2={'6 a.m'}
+              stroke={'var(--color-black)'} 
+              strokeOpacity={0}
+            />
+            <ReferenceArea
+              x1={'6 p.m'}
+              x2={'10 p.m'}
+              stroke={'var(--color-black)'} 
+              strokeOpacity={0}
             />
           </AreaChart>
         </ResponsiveContainer>

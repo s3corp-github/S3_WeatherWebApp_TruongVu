@@ -13,6 +13,7 @@
       padding: var(--layout-padding);
       position: fixed;
       width: 100%;
+      z-index: 1;
       .tide-text {
         color: var(--color-blue-tide);
       }
